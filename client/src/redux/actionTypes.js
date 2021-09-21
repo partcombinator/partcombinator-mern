@@ -1,0 +1,4 @@
+export default  {
+    USER_REGISTER: 'REGISTER_USER',
+    USER_LOGIN: 'REGISTER_USER'
+  }
