@@ -1,7 +1,8 @@
 # partcombinator-mern
 ```
 - Login.
-- Register.
+- Register with Email confirmation
+- Register with Google
 - Front-End.
 - Backend.
 - Config Profile User.
