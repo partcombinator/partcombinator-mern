@@ -9,3 +9,8 @@
 - Change Password.
 ```
 
+# mermCli
+```
+$ cd mernCli
+$ sudo npm install -g .
+```
