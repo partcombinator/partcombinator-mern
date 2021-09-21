@@ -13,4 +13,5 @@
 ```
 $ cd mernCli
 $ sudo npm install -g .
+$ pcmern create-model=post fields=title,text // Create Server & Client
 ```
