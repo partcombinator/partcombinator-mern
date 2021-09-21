@@ -1,2 +1,10 @@
 # partcombinator-mern
-Mern
+```
+- Login.
+- Register.
+- Front-End.
+- Backend.
+- Config Profile User.
+- Change Password.
+```
+
