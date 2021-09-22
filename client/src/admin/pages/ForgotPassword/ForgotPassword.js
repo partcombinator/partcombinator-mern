@@ -13,7 +13,7 @@ export default function ForgotPassword() {
                         <div class="card-body p-0">
                             <div class="row">
                                 <div class="col-lg-6 d-none d-lg-block">
-                                    <img src="/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
+                                    <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="p-5">

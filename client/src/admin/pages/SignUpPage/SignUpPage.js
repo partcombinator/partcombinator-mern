@@ -12,7 +12,7 @@ export default function SignUpPage() {
 
                     <div className="row">
                         <div className="col-lg-5 d-none d-lg-block">
-                            <img src="/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
+                            <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
                         </div>
                         <div className="col-lg-7">
                             <div className="p-5">
