@@ -51,7 +51,7 @@ export default function AdminPage() {
 
         <div className="col-xl-6 col-md-6 mb-4">
         <p class="mb-4">Hello User, I am  
-                        <a target="_blank" href="https://www.partcominator.com"> PartCombinator</a>.</p>
+        <a target="_blank" href="https://www.partcominator.com"> PartCombinator</a>. By Marlon Falcón Hernández.</p>
         </div>  
 
 
