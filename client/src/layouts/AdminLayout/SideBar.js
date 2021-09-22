@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  Link,
+} from "react-router-dom";
+
 
 export default function SideBar() {
   return (
@@ -7,12 +11,13 @@ export default function SideBar() {
       id="accordionSidebar"
     >
       {/* <!-- Sidebar - Brand --> */}
-      <a
+      <Link
         className="sidebar-brand d-flex align-items-center justify-content-center"
-        href="index.html"
+        to="/admin"
       >
+
         <div className="sidebar-brand-text mx-3">PartCombinator</div>
-      </a>
+        </Link>
 
       {/* <!-- Divider --> */}
       <hr className="sidebar-divider my-0" />
@@ -37,12 +42,17 @@ export default function SideBar() {
           id="collapsePages"
           className="collapse show"
           aria-labelledby="headingPages"
-          data-parent="#accordionSidebar"
-        >
-          <div className="bg-white py-2 collapse-inner rounded">
-            <a className="collapse-item" href="login.html">
+          data-parent="#accordionSidebar">
+          <div className="bg-white py-2 collapse-inner rounded" style={{ "text-align": "left" }}>
+            <Link className="collapse-item" to="/admin">
               Profile
-            </a>
+            </Link>
+            <Link className="collapse-item" to="/admin/posts">
+              Posts
+            </Link>
+            <Link className="collapse-item" to="/admin/categories">
+              Categories
+            </Link>
           </div>
         </div>
       </li>

@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
+import Footer from "./Footer";
 
 export default function AdminLayout(props) {
   const { children } = props;
@@ -11,7 +12,9 @@ export default function AdminLayout(props) {
         <div id="content">
           <TopBar />
           <div className="container-fluid">{children}</div>
+          
         </div>
+        <Footer/>
       </div>
     </div>
   );

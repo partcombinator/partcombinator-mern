@@ -11,8 +11,10 @@ import HomePage from '../front/pages/HomePage';
 import SignInPage from '../admin/pages/SignInPage';
 import SignUpPage from '../admin/pages/SignUpPage';
 import AdminPage from '../admin/pages/AdminPage';
+import Posts from '../admin/pages/Posts';
 import ForgotPassword from '../admin/pages/ForgotPassword';
 import Page404 from '../other/Page404';
+import Categories from '../admin/pages/Categories';
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
             <Route exact path="/admin/" component={AdminPage} />
-
+            <Route exact path="/admin/posts" component={Posts} />
+            <Route exact path="/admin/categories" component={Categories} />
              {/* Others */}
              <Route component={Page404} />
           </Switch>  
