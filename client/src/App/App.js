@@ -7,7 +7,11 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import ContactPage from '../front/pages/ContactPage';
 import HomePage from '../front/pages/HomePage';
+import AboutPage from '../front/pages/AboutPage';
+import PostPage from '../front/pages/PostPage';
+
 import SignInPage from '../admin/pages/SignInPage';
 import SignUpPage from '../admin/pages/SignUpPage';
 import AdminPage from '../admin/pages/AdminPage';
@@ -23,6 +27,9 @@ function App() {
           <Switch>
              {/* Front Routers */}
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/post" component={PostPage} />
              
              {/* Admin Routers */}
             <Route exact path="/signin" component={SignInPage} />
