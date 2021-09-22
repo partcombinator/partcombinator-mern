@@ -12,7 +12,6 @@ export default function AdminLayout(props) {
         <div id="content">
           <TopBar />
           <div className="container-fluid">{children}</div>
-          
         </div>
         <Footer/>
       </div>

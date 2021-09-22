@@ -18,17 +18,21 @@ export default function Categories() {
                                     <thead>
                                         <tr>
                                             <th>Title</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                    
                                     <tbody>
                                         <tr>
                                             <td>Tiger Nixon</td>
+                                            <td> 
+                    <a href="#" class="btn btn-danger btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
+                  </td>
+                  <td>
+                    <a href="#" class="btn btn-warning btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-pen"></i></span></a>
+                  </td>
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                        </tr>
-                                       
                                     </tbody>
                                 </table>
                             </div>

@@ -71,7 +71,7 @@ export default function TopBar() {
                       </span>
                       <img
                         className="img-profile rounded-circle"
-                        src="/img/undraw_profile.svg"
+                        src="/admin/img/undraw_profile.svg"
                       />
                     </a>
                     {/* <!-- Dropdown - User Information --> */}
