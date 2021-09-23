@@ -13,6 +13,7 @@ import SignInPage from "../admin/pages/SignInPage";
 import SignUpPage from "../admin/pages/SignUpPage";
 import AdminPage from "../admin/pages/AdminPage";
 import Posts from "../admin/pages/Posts";
+import PostNew from "../admin/pages/Posts/PostNew";
 import Post from "../admin/pages/Posts/Post";
 
 import ForgotPassword from "../admin/pages/ForgotPassword";
@@ -44,7 +45,7 @@ function App() {
             {/* Admin Routers */}
             <RoutePrivate exact path="/admin/" component={AdminPage} />
             <RoutePrivate exact path="/admin/posts" component={Posts} />
-            <RoutePrivate exact path="/admin/post" component={Post} />
+            <RoutePrivate exact path="/admin/post-new" component={PostNew} />
             <RoutePrivate exact path="/admin/post/edit/:id?" component={Post} />
             <RoutePrivate
               exact

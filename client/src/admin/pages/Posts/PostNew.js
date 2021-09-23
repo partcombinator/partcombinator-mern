@@ -7,21 +7,20 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 // Actions Redux
-import { editPostAction } from "../../../_actions/postsActions";
+import { createNewPostAction } from "../../../_actions/postsActions";
 
-export default function Post() {
+export default function PostNew() {
 
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.posts.loading);
   const error = useSelector((state) => state.posts.error);
-  const productEdit = useSelector((state) => state.posts.postedit);
-  const editPost = (post) => dispatch(editPostAction(post));
+  const addPost = (post) => dispatch(createNewPostAction(post));
 
 
   function initialValues() {
     return {
-      title: productEdit ? productEdit.title : "",
-      text: productEdit ? productEdit.text : "",
+      title: "",
+      text: "",
     };
   }
 
@@ -31,10 +30,9 @@ export default function Post() {
     onSubmit: (formData, { resetForm }) => {
       try {
         
-          console.log("EDIT")
-          formData.id = productEdit._id
-          editPost(formData);
-          resetForm(initialValues()); // Limpiamos el formulario
+        console.log("CREATE")
+        addPost(formData);
+        resetForm({ values: "" }); // Limpiamos el formulario
         
         toast.success("Save");
       } catch (error) {
@@ -78,6 +76,12 @@ export default function Post() {
               </span>
             </button>
             
+            {/* <button type="submit" className="btn btn-warning btn-icon-split ml-2">
+              <span className="icon text-white-50">
+                <i className="fas fa-edit"></i> {!loading ? "EDIT" : "LOADING"}
+              </span>
+            </button> */}
+
           </div>
           <div className="card-body">
             <div className="form-group">

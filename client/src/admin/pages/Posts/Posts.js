@@ -77,7 +77,7 @@ export default function Posts() {
 
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-            <Link to="/admin/post" className="btn btn-primary btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-edit"></i> CREATE </span></Link>
+            <Link to="/admin/post-new" className="btn btn-primary btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-edit"></i> CREATE </span></Link>
         </div>
         <div className="card-body">
           <div className="table-responsive">
@@ -92,6 +92,7 @@ export default function Posts() {
               <thead>
                 <tr>
                   <th>Title</th>
+                  <th>Date</th>
                   <th width="10px">Edit</th>
                   <th width="10px">Delete</th>
                 </tr>
@@ -100,6 +101,7 @@ export default function Posts() {
                 { posts && posts.map(post => (
                         <tr key={post._id}>
                             <td>{post.title}</td>
+                            <td>{post.date}</td>
                             <td> 
                               <button 
                                     onClick={ () => confirmDeletePost(post._id) }
