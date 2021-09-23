@@ -25,7 +25,7 @@ export default function SideBar() {
       <li className="nav-item active">
         <a
           className="nav-link"
-          href="#"
+          href="/"
           data-toggle="collapse"
           data-target="#collapsePages"
           aria-expanded="true"
@@ -42,7 +42,7 @@ export default function SideBar() {
         >
           <div
             className="bg-white py-2 collapse-inner rounded"
-            style={{ "text-align": "left" }}
+            
           >
             <Link className="collapse-item" to="/admin">
               Profile
@@ -51,7 +51,7 @@ export default function SideBar() {
 
           <div
             className="bg-white py-2 collapse-inner rounded"
-            style={{ "text-align": "left" }}
+            
           >
             <Link className="collapse-item" to="/admin/posts">
               Posts

@@ -17,7 +17,7 @@ export default function TopBar() {
                   <li className="nav-item dropdown no-arrow d-sm-none">
                     <a
                       className="nav-link dropdown-toggle"
-                      href="#"
+                      href="/"
                       id="searchDropdown"
                       role="button"
                       data-toggle="dropdown"
@@ -59,7 +59,7 @@ export default function TopBar() {
                   <li className="nav-item dropdown no-arrow">
                     <a
                       className="nav-link dropdown-toggle"
-                      href="#"
+                      href="/"
                       id="userDropdown"
                       role="button"
                       data-toggle="dropdown"
@@ -72,6 +72,7 @@ export default function TopBar() {
                       <img
                         className="img-profile rounded-circle"
                         src="/admin/img/undraw_profile.svg"
+                        alt="..."
                       />
                     </a>
                     {/* <!-- Dropdown - User Information --> */}
@@ -79,7 +80,7 @@ export default function TopBar() {
                       className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                       aria-labelledby="userDropdown"
                     >
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" href="/">
                         <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile
                       </a>
@@ -87,7 +88,7 @@ export default function TopBar() {
                       <div className="dropdown-divider"></div>
                       <a
                         className="dropdown-item"
-                        href="#"
+                        href="/"
                         data-toggle="modal"
                         data-target="#logoutModal"
                       >

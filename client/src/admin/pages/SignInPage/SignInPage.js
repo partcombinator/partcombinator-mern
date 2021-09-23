@@ -13,7 +13,7 @@ export default function SignInPage() {
                         <div className="card-body p-0">
                             <div className="row">
                                 <div className="col-lg-6 d-none d-lg-block">
-                                    <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
+                                    <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }} alt="logo"></img>
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="p-5">

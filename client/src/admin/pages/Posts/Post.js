@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,23 +7,40 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 // Actions Redux
-import { createNewPostAction } from "../../../_actions/postsActions";
+import { createNewPostAction, editPostAction } from "../../../_actions/postsActions";
 
 export default function Post() {
+
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.posts.loading);
   const error = useSelector((state) => state.posts.error);
-
+  const productEdit = useSelector((state) => state.posts.postedit);
   const addPost = (post) => dispatch(createNewPostAction(post));
+  const editPost = (post) => dispatch(editPostAction(post));
+
+
+  function initialValues() {
+    return {
+      title: productEdit && productEdit.title || "",
+      text: productEdit && productEdit.text || "",
+    };
+  }
+
 
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object(validationSchema()),
     onSubmit: (formData, { resetForm }) => {
       try {
-        addPost(formData);
+        if(productEdit) {
+          formData.id = productEdit._id
+          editPost(formData);
+          resetForm(initialValues()); // Limpiamos el formulario
+        } else {
+          addPost(formData);
+          resetForm({ values: "" }); // Limpiamos el formulario
+        }
         toast.success("Save");
-        resetForm({ values: "" }); // Limpiamos el formulario
       } catch (error) {
         toast.error("Error");
       }
@@ -47,6 +64,7 @@ export default function Post() {
           class="close"
           data-dismiss="alert"
           aria-label="Close"
+          
         >
           <span aria-hidden="true">&times;</span>
         </button>
@@ -95,13 +113,6 @@ export default function Post() {
       </form>
     </AdminLayout>
   );
-}
-
-function initialValues() {
-  return {
-    title: "",
-    text: "",
-  };
 }
 
 function validationSchema() {

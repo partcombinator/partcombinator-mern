@@ -1,5 +1,4 @@
 import React from 'react'
-import { LOGIN_GOOGLE, LOGIN_FACEBOOK, RECOVER_PASS_USER, REGISTER_USER } from '../../../utils/constants';
 import {
     Link,
 } from "react-router-dom";
@@ -13,7 +12,7 @@ export default function ForgotPassword() {
                         <div class="card-body p-0">
                             <div class="row">
                                 <div class="col-lg-6 d-none d-lg-block">
-                                    <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
+                                    <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }} alt="logo"></img>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="p-5">

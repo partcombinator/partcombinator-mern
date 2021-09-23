@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import ContactPage from "../front/pages/ContactPage";
@@ -45,6 +45,7 @@ function App() {
             <RoutePrivate exact path="/admin/" component={AdminPage} />
             <RoutePrivate exact path="/admin/posts" component={Posts} />
             <RoutePrivate exact path="/admin/post" component={Post} />
+            <RoutePrivate exact path="/admin/post/edit/:id?" component={Post} />
             <RoutePrivate
               exact
               path="/admin/categories"

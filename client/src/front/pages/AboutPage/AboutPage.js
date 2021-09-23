@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import FrontLayout from "../../../layouts/FrontLayout";
 
 export default function AboutPage() {

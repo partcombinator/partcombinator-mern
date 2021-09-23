@@ -1,5 +1,5 @@
 import React from 'react';
-import { LOGIN_GOOGLE, LOGIN_FACEBOOK, RECOVER_PASS_USER, REGISTER_USER } from '../../../utils/constants';
+import { LOGIN_GOOGLE, LOGIN_FACEBOOK } from '../../../utils/constants';
 import {
     Link,
 } from "react-router-dom";
@@ -12,7 +12,7 @@ export default function SignUpPage() {
 
                     <div className="row">
                         <div className="col-lg-5 d-none d-lg-block">
-                            <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }}></img>
+                            <img src="/admin/img/your-logo.png" style={{ "width": "100%", "height": "100" }} alt="logo"></img>
                         </div>
                         <div className="col-lg-7">
                             <div className="p-5">

@@ -1,5 +1,6 @@
 import React from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
+import { Link } from "react-router-dom";
 
 export default function Categories() {
     return (
@@ -10,16 +11,16 @@ export default function Categories() {
 
       <div className="card shadow mb-4">
                         <div className="card-header py-3">
-                        <a href="#" class="btn btn-primary btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-edit"></i> CREATE </span></a>
+                        <Link to="/" className="btn btn-primary btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-edit"></i> CREATE </span></Link>
                         </div>
                         <div className="card-body">
                             <div className="table-responsive">
-                                <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                                     <thead>
                                         <tr>
                                             <th>Title</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th width="10px">Edit</th>
+                                            <th width="10px">Delete</th>
                                         </tr>
                                     </thead>
                                    
@@ -27,10 +28,10 @@ export default function Categories() {
                                         <tr>
                                             <td>Tiger Nixon</td>
                                             <td> 
-                    <a href="#" class="btn btn-danger btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
+                    <Link to="/" className="btn btn-danger btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-trash"></i></span></Link>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-warning btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-pen"></i></span></a>
+                    <Link to="/" className="btn btn-warning btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-pen"></i></span></Link>
                   </td>
                                         </tr>
                                     </tbody>

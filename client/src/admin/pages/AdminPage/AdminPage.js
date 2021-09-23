@@ -1,5 +1,6 @@
 import React from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
+import { Link } from "react-router-dom";
 
 export default function AdminPage() {
   return (
@@ -51,7 +52,7 @@ export default function AdminPage() {
 
         <div className="col-xl-6 col-md-6 mb-4">
         <p className="mb-4">Hello User, I am  
-        <a target="_blank" href="https://www.partcominator.com"> PartCombinator</a>. By Marlon Falcón Hernández.</p>
+        <Link target="_blank" to="https://www.partcominator.com"> PartCombinator</Link>. By Marlon Falcón Hernández.</p>
         </div>  
 
 
@@ -86,9 +87,9 @@ export default function AdminPage() {
                 />
               </div>
 
-              <a href="#" className="btn btn-success btn-block">
+              <button className="btn btn-success btn-block">
                 <i className="fab fa-save fa-fw"></i>Change
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -117,9 +118,9 @@ export default function AdminPage() {
                 <input type="text" className="form-control" placeholder="Email" />
               </div>
 
-              <a href="#" className="btn btn-secondary btn-block">
+              <Link to="/" className="btn btn-secondary btn-block">
                 <i className="fab fa-save fa-fw"></i>Change
-              </a>
+              </Link>
             </div>
           </div>
         </div>
