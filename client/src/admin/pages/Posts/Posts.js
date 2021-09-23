@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
 import { Link } from "react-router-dom";
 
+// Redux Component
+import { useSelector, useDispatch } from "react-redux";
+import {  givePostAction  } from "../../../_actions/postsActions"
+
+
 export default function Posts() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      const loadPost = () => dispatch( givePostAction() )
+      loadPost();
+  }, [])
+
   return (
     <AdminLayout>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
@@ -11,7 +23,7 @@ export default function Posts() {
 
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-            <Link to="/admin/post" class="btn btn-primary btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-edit"></i> CREATE </span></Link>
+            <Link to="/admin/post" className="btn btn-primary btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-edit"></i> CREATE </span></Link>
         </div>
         <div className="card-body">
           <div className="table-responsive">
@@ -35,10 +47,10 @@ export default function Posts() {
                   <td>Tiger Nixon</td>
                   <td>System Architect</td>
                   <td> 
-                    <a href="#" class="btn btn-danger btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-trash"></i></span></a>
+                    <a href="#" className="btn btn-danger btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-trash"></i></span></a>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-warning btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-pen"></i></span></a>
+                    <a href="#" className="btn btn-warning btn-icon-split"> <span className="icon text-white-50"><i className="fas fa-pen"></i></span></a>
                   </td>
                 </tr>
                

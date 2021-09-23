@@ -50,7 +50,7 @@ export default function AdminPage() {
         </div>
 
         <div className="col-xl-6 col-md-6 mb-4">
-        <p class="mb-4">Hello User, I am  
+        <p className="mb-4">Hello User, I am  
         <a target="_blank" href="https://www.partcominator.com"> PartCombinator</a>. By Marlon Falcón Hernández.</p>
         </div>  
 
@@ -60,65 +60,65 @@ export default function AdminPage() {
       </div>
 
       <div className="row">
-        <div class="col-lg-6">
-          <div class=" card shadow">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-success">
+        <div className="col-lg-6">
+          <div className=" card shadow">
+            <div className="card-header py-3">
+              <h6 className="m-0 font-weight-bold text-success">
                 Change Your Password
               </h6>
             </div>
-            <div class="card-body">
-              <div class="form-group">
+            <div className="card-body">
+              <div className="form-group">
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
                 />
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Repeat your Password"
                 />
               </div>
 
-              <a href="#" class="btn btn-success btn-block">
-                <i class="fab fa-save fa-fw"></i>Change
+              <a href="#" className="btn btn-success btn-block">
+                <i className="fab fa-save fa-fw"></i>Change
               </a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class=" card shadow">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-secoundary">
+        <div className="col-lg-6">
+          <div className=" card shadow">
+            <div className="card-header py-3">
+              <h6 className="m-0 font-weight-bold text-secoundary">
                 Change Your Data
               </h6>
             </div>
-            <div class="card-body">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name" />
+            <div className="card-body">
+              <div className="form-group">
+                <input type="text" className="form-control" placeholder="Name" />
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Full Name"
                 />
               </div>
 
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Email" />
+              <div className="form-group">
+                <input type="text" className="form-control" placeholder="Email" />
               </div>
 
-              <a href="#" class="btn btn-secondary btn-block">
-                <i class="fab fa-save fa-fw"></i>Change
+              <a href="#" className="btn btn-secondary btn-block">
+                <i className="fab fa-save fa-fw"></i>Change
               </a>
             </div>
           </div>

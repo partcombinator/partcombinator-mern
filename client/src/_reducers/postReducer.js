@@ -1,7 +1,11 @@
 import { 
     ADD_POST,
     ADD_POST_SUCCESS,
-    ADD_POST_ERROR
+    ADD_POST_ERROR,
+
+    BEGIN_DOWNLOAD_POST,
+    DOWNLOAD_POST_SUCCESS,
+    DOWNLOAD_POST_ERROR
  } from '../_types/postTypes';
 
 
@@ -13,6 +17,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
+        case BEGIN_DOWNLOAD_POST:
         case ADD_POST: 
             return {
                 ...state,
@@ -31,8 +36,7 @@ export default function(state = initialState, action) {
                 ...state,
                 loading: false,
                 error: action.payload
-            } 
-
+            }
         default:
             return state;
     }
