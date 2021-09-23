@@ -1,16 +1,17 @@
 import React from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
+import { Link } from "react-router-dom";
 
 export default function Posts() {
   return (
     <AdminLayout>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Posts</h1>
+        <h1 className="h3 mb-0 text-gray-800">Posts List</h1>
       </div>
 
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h6 className="m-0 font-weight-bold text-secundary">List Post</h6>
+            <Link to="/admin/post" class="btn btn-primary btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-edit"></i> CREATE </span></Link>
         </div>
         <div className="card-body">
           <div className="table-responsive">

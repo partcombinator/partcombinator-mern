@@ -10,7 +10,7 @@ export default function Categories() {
 
       <div className="card shadow mb-4">
                         <div className="card-header py-3">
-                            <h6 className="m-0 font-weight-bold text-secundary">List Categories</h6>
+                        <a href="#" class="btn btn-primary btn-icon-split"> <span class="icon text-white-50"><i class="fas fa-edit"></i> CREATE </span></a>
                         </div>
                         <div className="card-body">
                             <div className="table-responsive">

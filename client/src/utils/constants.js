@@ -4,3 +4,4 @@ export const LOGIN_GOOGLE = false;
 export const LOGIN_FACEBOOK = false;
 export const REGISTER_USER = true;
 export const RECOVER_PASS_USER = false;
+export const TOKEN = "token";
