@@ -16,6 +16,7 @@ import ConfigPage from "../admin/pages/ConfigPage";
 import Posts from "../admin/pages/Posts";
 import PostNew from "../admin/pages/Posts/PostNew";
 import Post from "../admin/pages/Posts/Post";
+import DashboardPage from "../admin/pages/DashboardPage";
 
 import ForgotPassword from "../admin/pages/ForgotPassword";
 import Page404 from "../other/Page404";
@@ -44,8 +45,9 @@ function App() {
             <Route exact path="/forgot-password" component={ForgotPassword} />
 
             {/* Admin Routers */}
-            <RoutePrivate exact path="/admin/" component={ProfilePage} />
-            <RoutePrivate exact path="/config/" component={ConfigPage} />
+            <RoutePrivate exact path="/admin" component={DashboardPage} />
+            <RoutePrivate exact path="/admin/profile" component={ProfilePage} />
+            <RoutePrivate exact path="/admin/config" component={ConfigPage} />
             <RoutePrivate exact path="/admin/posts" component={Posts} />
             <RoutePrivate exact path="/admin/post-new" component={PostNew} />
             <RoutePrivate exact path="/admin/post/edit/:id?" component={Post} />

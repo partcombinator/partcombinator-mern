@@ -34,7 +34,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages"
         >
-          <i className="fas fa-fw fa-user"></i>
+          <i className="fas fa-fw fa-users"></i>
           <span>User</span>
         </a>
         <div
@@ -48,7 +48,11 @@ export default function SideBar() {
             
           >
             <Link className="collapse-item" to="/admin">
-              Profile
+              <i className="fas fa-fw fa-user"></i> Dashboard
+            </Link>
+
+            <Link className="collapse-item" to="/admin/profile">
+              <i className="fas fa-fw fa-user"></i> Profile
             </Link>
           </div>
 
@@ -83,18 +87,24 @@ export default function SideBar() {
             
           >
             <Link className="collapse-item" to="/admin/posts">
-              Posts
+              <i className="fas fa-fw fa-file"></i>  Posts
             </Link>
             <Link className="collapse-item" to="/admin/categories">
-              Categories
+              <i className="fas fa-fw fa-file-alt"></i> Categories
+            </Link>
+            <Link className="collapse-item" to="/admin/categories">
+              <i className="fas fa-fw fa-at"></i> Emails
+            </Link>
+            <Link className="collapse-item" to="/admin/categories">
+              <i className="fas fa-fw fa-people-arrows"></i> Users
             </Link>
           </div>
           <div
             className="bg-white py-2 collapse-inner rounded"
             
           >
-            <Link className="collapse-item" to="/config">
-              Config
+            <Link className="collapse-item" to="/admin/config">
+            <i className="fas fa-fw fa-fan"></i> Config
             </Link>
           </div>
 
