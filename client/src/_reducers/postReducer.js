@@ -11,7 +11,9 @@ import {
     POST_DELETED_SUCCESS,
     POST_DELETED_ERROR,
 
-    GIVE_POST_EDIT
+    GIVE_POST_EDIT,
+    POST_EDIT_SUCCESS,
+    POST_EDIT_ERROR
 
  } from '../_types/postTypes';
 
@@ -43,6 +45,7 @@ export default function post(state = initialState, action) {
         case DOWNLOAD_POST_ERROR: 
         case ADD_POST_ERROR:
         case POST_DELETED_ERROR:
+        case POST_EDIT_ERROR:    
             return {
                 ...state,
                 loading: false,
@@ -76,8 +79,14 @@ export default function post(state = initialState, action) {
                 ...state,
                 postedit : action.payload
             }
-
-          
+        case POST_EDIT_SUCCESS:
+            return {
+                ...state,
+                postedit: null,
+                posts: state.posts.map( post => 
+                        post.id === action.payload.id ? post = action.payload : post
+                    )
+            } 
             
         default:
             return state;

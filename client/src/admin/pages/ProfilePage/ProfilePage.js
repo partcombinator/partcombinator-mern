@@ -2,7 +2,7 @@ import React from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
 import { Link } from "react-router-dom";
 
-export default function AdminPage() {
+export default function ProfilePage() {
   return (
     <AdminLayout>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">

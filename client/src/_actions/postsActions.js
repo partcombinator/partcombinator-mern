@@ -127,15 +127,27 @@ export function editPostAction( post ) {
     return async (dispatch) => {
         dispatch( _editPost( post)  )
         try {
-            await editPost( post.id, post)    
+            await editPost( post.id, post)
+            dispatch( _editPostSuccess(post) )    
         } catch (error) {
-            
+            dispatch( _editPostError() ) 
         }
     }
 }
 
-const _editPost = post => ({
-    type: BEGIN_EDIT_POST,
+const _editPost = () => ({
+    type: BEGIN_EDIT_POST
+})
+
+const _editPostSuccess = post => ({
+    type: POST_EDIT_SUCCESS,
     payload: post
 })
+
+const _editPostError = () => ({
+    type: POST_EDIT_ERROR,
+    payload: true
+})
+
+
 

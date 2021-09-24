@@ -13,7 +13,7 @@ export default function SideBar() {
         to="/admin"
       >
         <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-database"></i>
                 </div>
         <div className="sidebar-brand-text mx-3">PartComb</div>
       </Link>
@@ -34,7 +34,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages"
         >
-          <i className="fas fa-fw fa-folder"></i>
+          <i className="fas fa-fw fa-user"></i>
           <span>User</span>
         </a>
         <div
@@ -66,7 +66,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages"
         >
-          <i className="fas fa-fw fa-folder"></i>
+          <i className="fas fa-fw fa-atom"></i>
           <span>Admin</span>
         </a>
 
@@ -93,7 +93,7 @@ export default function SideBar() {
             className="bg-white py-2 collapse-inner rounded"
             
           >
-            <Link className="collapse-item" to="/admin">
+            <Link className="collapse-item" to="/config">
               Config
             </Link>
           </div>
