@@ -28,14 +28,14 @@ export default function SideBar() {
           className="nav-link"
           href="/"
           data-toggle="collapse"
-          data-target="#collapsePages"
+          data-target="#collapseUser"
           aria-expanded="true"
           aria-controls="collapsePages">
           <i className="fas fa-fw fa-users"></i>
           <span>User</span>
         </a>
         <div
-          id="collapsePages"
+          id="collapseUser"
           className="collapse show"
           aria-labelledby="headingPages"
           data-parent="#accordionSidebar">
@@ -72,6 +72,9 @@ export default function SideBar() {
             <Link className="collapse-item" to="/admin/posts">
               <i className="fas fa-fw fa-file"></i> Posts
             </Link>
+            <Link className="collapse-item" to="/admin/posts">
+              <i className="fas fa-fw fa-archive"></i> Products
+            </Link>
             <Link className="collapse-item" to="/admin/categories">
               <i className="fas fa-fw fa-file-alt"></i> Categories
             </Link>
@@ -81,24 +84,51 @@ export default function SideBar() {
             <Link className="collapse-item" to="/admin/categories">
               <i className="fas fa-fw fa-people-arrows"></i> Users
             </Link>
+            <Link className="collapse-item" to="/admin/categories">
+              <i className="fas fa-fw fa-people-arrows"></i> Profiles
+            </Link>
           </div>
+          
+        </div>
+      </li>
+
+      <li className="nav-item active">
+        <a
+          className="nav-link"
+          href="/"
+          data-toggle="collapse"
+          data-target="#headingConfig"
+          aria-expanded="true"
+          aria-controls="collapsePages">
+          <i className="fas fa-fw fa-atom"></i>
+          <span>Config</span>
+        </a>
+
+        <div
+          id="headingConfig"
+          className="collapse show"
+          aria-labelledby="headingConfig"
+          data-parent="#accordionSidebar">
           <div className="bg-white py-2 collapse-inner rounded">
+
             <Link className="collapse-item" to="/admin/config">
-              <i className="fas fa-fw fa-fan"></i> General Config
+              <i className="fas fa-fw fa-fan"></i> General
             </Link>
             <Link className="collapse-item" to="/admin/config">
-              <i className="fas fa-fw fa-fan"></i> Email Config
+              <i className="fas fa-fw fa-fan"></i> Email
             </Link>
             <Link className="collapse-item" to="/admin/config">
               <i className="fas fa-fw fa-phone"></i> WhatsApp
             </Link>
             <Link className="collapse-item" to="/admin/config">
-              <i className="fas fa-fw fa-check-square"></i> Cron
+              <i className="fas fa-fw fa-check-square"></i> Cron / Jobs
+            </Link>
+            <Link className="collapse-item" to="/admin/config">
+              <i className="fas fa-fw fa-backspace"></i> Params
             </Link>
           </div>
-        </div>
+       </div>
       </li>
-
       {/* <!-- Divider --> */}
       <hr className="sidebar-divider d-none d-md-block" />
 
