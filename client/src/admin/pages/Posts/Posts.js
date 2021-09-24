@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
 import { Link, useHistory } from "react-router-dom";
 import swal from "sweetalert";
+import { useTranslation } from "react-i18next";
+import "../../../i18n/i18n";
 
 // Redux Component
 import { useSelector, useDispatch } from "react-redux";
@@ -12,6 +14,7 @@ import {
 } from "../../../_actions/postsActions";
 
 export default function Posts() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const history = useHistory();
   const [reloadLines, setReloadLines] = useState(false);
@@ -52,7 +55,7 @@ export default function Posts() {
   return (
     <AdminLayout>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Posts List</h1>
+        <h1 className="h3 mb-0 text-gray-800">{t("Posts_List")}</h1>
       </div>
 
       {error && (
@@ -79,7 +82,7 @@ export default function Posts() {
           <Link to="/admin/post-new" className="btn btn-primary btn-icon-split">
             {" "}
             <span className="icon text-white-50">
-              <i className="fas fa-edit"></i> CREATE{" "}
+              <i className="fas fa-edit"></i> {t("Create")}
             </span>
           </Link>
         </div>
@@ -94,10 +97,10 @@ export default function Posts() {
               >
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th width="10px">Edit</th>
-                    <th width="10px">Delete</th>
+                    <th>{t("Title")}</th>
+                    <th>{t("Date")}</th>
+                    <th width="10px">{t("Edit")}</th>
+                    <th width="10px">{t("Delete")}</th>
                   </tr>
                 </thead>
                 <tbody>

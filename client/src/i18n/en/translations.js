@@ -8,5 +8,12 @@ export const TRANSLATIONS_EN = {
       Dashboard:"Dashboard",
       Posts:"Posts",
       Numbers_of_Post:"Numbers of Post",
-      Numbers_of_Categories: "Numbers of Categories"
+      Numbers_of_Categories: "Numbers of Categories",
+      Create:"Create",
+      Date:"Date",
+      Title:"Title",
+      Text:"Text",
+      Edit:"Edit",
+      Delete:"Delete",
+      Posts_List: "Posts List",
    };

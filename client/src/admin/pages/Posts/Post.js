@@ -6,12 +6,15 @@ import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import "../../../i18n/i18n";
+
 
 // Actions Redux
 import { editPostAction } from "../../../_actions/postsActions";
 
 export default function Post() {
-
+  const { t } = useTranslation();
   const history = useHistory();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.posts.loading);
@@ -84,7 +87,7 @@ export default function Post() {
           </div>
           <div className="card-body">
             <div className="form-group">
-              <label>Title</label>
+              <label>{t("Title")}</label>
               <input
                 type="text"
                 className="form-control"
@@ -97,7 +100,7 @@ export default function Post() {
             </div>
 
             <div className="form-group">
-              <label>Text</label>
+              <label>{t("Text")}</label>
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"

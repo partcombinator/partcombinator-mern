@@ -6,7 +6,14 @@ export const TRANSLATIONS_ES = {
     Admin:"Administrador",
     Config:"Configuración",
     Dashboard:"Tablero",
-    Posts:"Publicación",
+    Posts:"Publicaciones",
     Numbers_of_Post:"Números de publicaciones",
-    Numbers_of_Categories: "Números de Categorías"
+    Numbers_of_Categories: "Números de Categorías",
+    Create:"Crear",
+    Date:"Fecha",
+    Title:"Título",
+    Text:"Texto",
+    Edit:"Editar",
+    Delete:"Borrar",
+    Posts_List: "Lista de Publicaciones",
  };
