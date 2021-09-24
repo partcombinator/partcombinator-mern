@@ -5,17 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Redirect } from 'react-router'
+import { useHistory } from "react-router-dom";
 
 // Actions Redux
 import { createNewPostAction } from "../../../_actions/postsActions";
 
 export default function PostNew() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const loading = useSelector((state) => state.posts.loading);
   const error = useSelector((state) => state.posts.error);
   const addPost = (post) => dispatch(createNewPostAction(post));
-
 
   function initialValues() {
     return {
@@ -29,13 +29,12 @@ export default function PostNew() {
     validationSchema: Yup.object(validationSchema()),
     onSubmit: (formData, { resetForm }) => {
       try {
-        
-        console.log("CREATE")
+        console.log("CREATE");
         addPost(formData);
         resetForm({ values: "" }); // Limpiamos el formulario
         toast.success("Save");
-        return <Redirect to='/admin/posts'/>;
-        } catch (error) {
+        history.push("/admin/posts");
+      } catch (error) {
         toast.error("Error");
       }
     },
@@ -50,38 +49,37 @@ export default function PostNew() {
         </Link>
       </div>
 
-      { error && (
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error</strong> {error}
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-label="Close"
-          
+      {error && (
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
         >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      )} 
-      
+          <strong>Error</strong> {error}
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      )}
 
       <form onSubmit={formik.handleSubmit}>
         <div className="card shadow mb-4">
           <div className="card-header py-3">
-            
             <button type="submit" className="btn btn-primary btn-icon-split">
               <span className="icon text-white-50">
                 <i className="fas fa-edit"></i> {!loading ? "SAVE" : "LOADING"}
               </span>
             </button>
-            
+
             {/* <button type="submit" className="btn btn-warning btn-icon-split ml-2">
               <span className="icon text-white-50">
                 <i className="fas fa-edit"></i> {!loading ? "EDIT" : "LOADING"}
               </span>
             </button> */}
-
           </div>
           <div className="card-body">
             <div className="form-group">
@@ -103,7 +101,7 @@ export default function PostNew() {
                 className="form-control"
                 id="exampleFormControlTextarea1"
                 placeholder="Your Text"
-                rows="3"
+                rows="10"
                 name="text"
                 onChange={formik.handleChange}
                 required

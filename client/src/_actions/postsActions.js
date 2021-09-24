@@ -126,7 +126,6 @@ export function editPostAction( post ) {
     console.log("id:", post.id)
     return async (dispatch) => {
         dispatch( _editPost( post)  )
-        
         try {
             await editPost( post.id, post)    
         } catch (error) {

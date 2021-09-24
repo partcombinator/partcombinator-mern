@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useHistory } from "react-router-dom";
 
 // Actions Redux
 import { editPostAction } from "../../../_actions/postsActions";
 
 export default function Post() {
 
+  const history = useHistory();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.posts.loading);
   const error = useSelector((state) => state.posts.error);
@@ -35,6 +37,7 @@ export default function Post() {
           formData.id = productEdit._id
           editPost(formData);
           resetForm(initialValues()); // Limpiamos el formulario
+          history.push('/admin/posts')
         
         toast.success("Save");
       } catch (error) {
@@ -99,7 +102,7 @@ export default function Post() {
                 className="form-control"
                 id="exampleFormControlTextarea1"
                 placeholder="Your Text"
-                rows="3"
+                rows="10"
                 name="text"
                 onChange={formik.handleChange}
                 required
