@@ -15,3 +15,16 @@ $ cd mernCli
 $ sudo npm install -g .
 $ pcmern create-model=post fields=title,text // Create Server & Client
 ```
+
+# Server
+```
+cd server
+npm i
+npm run dev
+```
+# Client
+```
+cd client
+yarn
+yarn start
+```

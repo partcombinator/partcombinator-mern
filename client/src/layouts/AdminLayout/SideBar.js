@@ -12,7 +12,10 @@ export default function SideBar() {
         className="sidebar-brand d-flex align-items-center justify-content-center"
         to="/admin"
       >
-        <div className="sidebar-brand-text mx-3">PartCombinator</div>
+        <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+        <div className="sidebar-brand-text mx-3">PartComb</div>
       </Link>
 
       {/* <!-- Divider --> */}
@@ -32,7 +35,7 @@ export default function SideBar() {
           aria-controls="collapsePages"
         >
           <i className="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>User</span>
         </a>
         <div
           id="collapsePages"
@@ -49,6 +52,32 @@ export default function SideBar() {
             </Link>
           </div>
 
+          
+
+        </div>
+      </li>
+
+      <li className="nav-item active">
+        <a
+          className="nav-link"
+          href="/"
+          data-toggle="collapse"
+          data-target="#collapsePages"
+          aria-expanded="true"
+          aria-controls="collapsePages"
+        >
+          <i className="fas fa-fw fa-folder"></i>
+          <span>Admin</span>
+        </a>
+
+        <div
+          id="collapsePages"
+          className="collapse show"
+          aria-labelledby="headingPages"
+          data-parent="#accordionSidebar"
+        >
+          
+
           <div
             className="bg-white py-2 collapse-inner rounded"
             
@@ -60,8 +89,17 @@ export default function SideBar() {
               Categories
             </Link>
           </div>
+          <div
+            className="bg-white py-2 collapse-inner rounded"
+            
+          >
+            <Link className="collapse-item" to="/admin">
+              Config
+            </Link>
+          </div>
+
         </div>
-      </li>
+    </li>  
 
       {/* <!-- Divider --> */}
       <hr className="sidebar-divider d-none d-md-block" />

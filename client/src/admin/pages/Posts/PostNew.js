@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Redirect } from 'react-router'
 
 // Actions Redux
 import { createNewPostAction } from "../../../_actions/postsActions";
 
 export default function PostNew() {
-
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.posts.loading);
   const error = useSelector((state) => state.posts.error);
@@ -33,9 +33,9 @@ export default function PostNew() {
         console.log("CREATE")
         addPost(formData);
         resetForm({ values: "" }); // Limpiamos el formulario
-        
         toast.success("Save");
-      } catch (error) {
+        return <Redirect to='/admin/posts'/>;
+        } catch (error) {
         toast.error("Error");
       }
     },

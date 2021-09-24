@@ -12,11 +12,7 @@ const PostSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now,
-    },
-    user: [{
-		type: Schema.ObjectId,
-		ref: 'User'
-	}]
+    }
 
 });
 
