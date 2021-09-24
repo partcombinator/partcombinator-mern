@@ -15,7 +15,7 @@ export default function ProfilePage() {
         <div className="col-lg-6">
           <div className=" card shadow">
             <div className="card-header py-3">
-              <h6 className="m-0 font-weight-bold text-success">
+              <h6 className="m-0 font-weight-bold text-secoundary">
                 Change Your Password
               </h6>
             </div>
@@ -38,7 +38,7 @@ export default function ProfilePage() {
                 />
               </div>
 
-              <button className="btn btn-success btn-block">
+              <button className="btn btn-secondary btn-block">
                 <i className="fab fa-save fa-fw"></i>Change
               </button>
             </div>

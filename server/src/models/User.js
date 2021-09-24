@@ -22,7 +22,7 @@ const UserSchema = mongoose.Schema({
     },
     profile: {
         type: String,
-        default: "user" // user, developer, admin
+        type: [{ type: mongoose.Types.ObjectId, ref: 'Profile' }]
     },
     verified: {
         type: Boolean,

@@ -59,8 +59,8 @@ export default function SideBar() {
           data-target="#collapsePages"
           aria-expanded="true"
           aria-controls="collapsePages">
-          <i className="fas fa-fw fa-atom"></i>
-          <span>Admin</span>
+          <i className="fas fa-fw fa-circle"></i>
+          <span>Public</span>
         </a>
 
         <div
@@ -78,6 +78,37 @@ export default function SideBar() {
             <Link className="collapse-item" to="/admin/categories">
               <i className="fas fa-fw fa-file-alt"></i> Categories
             </Link>
+            
+            <Link className="collapse-item" to="/admin/categories">
+              <i className="fas fa-fw fa-at"></i> Emails Contact
+            </Link>
+
+            <Link className="collapse-item" to="/admin/calendar">
+              <i className="fas fa-fw fa-calendar"></i> Calendar
+            </Link>
+          </div>
+          
+        </div>
+      </li>
+
+      <li className="nav-item active">
+        <a
+          className="nav-link"
+          href="/"
+          data-toggle="collapse"
+          data-target="#collapsePages"
+          aria-expanded="true"
+          aria-controls="collapsePages">
+          <i className="fas fa-fw fa-atom"></i>
+          <span>Admin</span>
+        </a>
+
+        <div
+          id="collapsePages"
+          className="collapse show"
+          aria-labelledby="headingPages"
+          data-parent="#accordionSidebar">
+          <div className="bg-white py-2 collapse-inner rounded">
             <Link className="collapse-item" to="/admin/categories">
               <i className="fas fa-fw fa-at"></i> Emails Contact
             </Link>
@@ -115,10 +146,10 @@ export default function SideBar() {
               <i className="fas fa-fw fa-fan"></i> General
             </Link>
             <Link className="collapse-item" to="/admin/config">
-              <i className="fas fa-fw fa-fan"></i> Email
+              <i className="fas fa-fw fa-fan"></i> Email Servers
             </Link>
             <Link className="collapse-item" to="/admin/config">
-              <i className="fas fa-fw fa-phone"></i> WhatsApp
+              <i className="fas fa-fw fa-phone"></i> WhatsApp API
             </Link>
             <Link className="collapse-item" to="/admin/config">
               <i className="fas fa-fw fa-check-square"></i> Cron / Jobs

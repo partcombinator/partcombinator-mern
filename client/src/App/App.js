@@ -12,6 +12,7 @@ import PostPage from "../front/pages/PostPage";
 import SignInPage from "../admin/pages/SignInPage";
 import SignUpPage from "../admin/pages/SignUpPage";
 import ProfilePage from "../admin/pages/ProfilePage";
+import CalendarPage from "../admin/pages/CalendarPage";
 import ConfigPage from "../admin/pages/ConfigPage";
 import Posts from "../admin/pages/Posts";
 import PostNew from "../admin/pages/Posts/PostNew";
@@ -47,6 +48,7 @@ function App() {
             {/* Admin Routers */}
             <RoutePrivate exact path="/admin" component={DashboardPage} />
             <RoutePrivate exact path="/admin/profile" component={ProfilePage} />
+            <RoutePrivate exact path="/admin/calendar" component={CalendarPage} />
             <RoutePrivate exact path="/admin/config" component={ConfigPage} />
             <RoutePrivate exact path="/admin/posts" component={Posts} />
             <RoutePrivate exact path="/admin/post-new" component={PostNew} />

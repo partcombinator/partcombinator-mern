@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function TopBar() {
+  const { t, i18n } = useTranslation();
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 {/* <!-- Sidebar Toggle (Topbar) --> */}
@@ -82,7 +84,7 @@ export default function TopBar() {
                     >
                       <a className="dropdown-item" href="/">
                         <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Profile
+                        {t,('profile')}
                       </a>
                       
                       <div className="dropdown-divider"></div>
