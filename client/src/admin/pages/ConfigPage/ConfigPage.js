@@ -6,7 +6,7 @@ export default function ConfigPage() {
   return (
     <AdminLayout>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Config</h1>
+        <h1 className="h3 mb-0 text-gray-800">General Config</h1>
       </div>  
 
         <div className="col-xl-6 col-md-6 mb-4">
