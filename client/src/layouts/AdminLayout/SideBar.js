@@ -76,18 +76,18 @@ export default function SideBar() {
               <i className="fas fa-fw fa-file"></i> {t("Posts")}
             </Link>
             <Link className="collapse-item" to="/admin/posts">
-              <i className="fas fa-fw fa-archive"></i> Products
+              <i className="fas fa-fw fa-archive"></i> {t("Products")}
             </Link>
             <Link className="collapse-item" to="/admin/categories">
-              <i className="fas fa-fw fa-file-alt"></i> Categories
+              <i className="fas fa-fw fa-file-alt"></i> {t("Categories")}
             </Link>
             
             <Link className="collapse-item" to="/admin/categories">
-              <i className="fas fa-fw fa-at"></i> Emails Contact
+              <i className="fas fa-fw fa-at"></i> {t("Emails_Contact")}
             </Link>
 
             <Link className="collapse-item" to="/admin/calendar">
-              <i className="fas fa-fw fa-calendar"></i> Calendar
+              <i className="fas fa-fw fa-calendar"></i> {t("Calendar")}
             </Link>
           </div>
           

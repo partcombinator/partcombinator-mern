@@ -16,4 +16,8 @@ export const TRANSLATIONS_EN = {
       Edit:"Edit",
       Delete:"Delete",
       Posts_List: "Posts List",
+      Products: "Products",
+      Categories: "Categories",
+      Emails_Contact: "Emails_Contact",
+      Calendar: "Calendar",
    };
