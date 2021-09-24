@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import "../../i18n/i18n";
 
 export default function SideBar() {
+  const { t } = useTranslation();
   return (
     <ul
       className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion"
@@ -32,7 +35,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages">
           <i className="fas fa-fw fa-users"></i>
-          <span>User</span>
+          <span>{t("User")}</span>
         </a>
         <div
           id="collapseUser"
@@ -41,11 +44,11 @@ export default function SideBar() {
           data-parent="#accordionSidebar">
           <div className="bg-white py-2 collapse-inner rounded">
             <Link className="collapse-item" to="/admin">
-              <i className="fas fa-fw fa-user"></i> Dashboard
+              <i className="fas fa-fw fa-user"></i> {t("Dashboard")}
             </Link>
 
             <Link className="collapse-item" to="/admin/profile">
-              <i className="fas fa-fw fa-user"></i> Profile
+              <i className="fas fa-fw fa-user"></i> {t("Profile")}
             </Link>
           </div>
         </div>
@@ -60,7 +63,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages">
           <i className="fas fa-fw fa-circle"></i>
-          <span>Public</span>
+          <span>{t("public")}</span>
         </a>
 
         <div
@@ -70,7 +73,7 @@ export default function SideBar() {
           data-parent="#accordionSidebar">
           <div className="bg-white py-2 collapse-inner rounded">
             <Link className="collapse-item" to="/admin/posts">
-              <i className="fas fa-fw fa-file"></i> Posts
+              <i className="fas fa-fw fa-file"></i> {t("Posts")}
             </Link>
             <Link className="collapse-item" to="/admin/posts">
               <i className="fas fa-fw fa-archive"></i> Products
@@ -100,7 +103,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages">
           <i className="fas fa-fw fa-atom"></i>
-          <span>Admin</span>
+          <span>{t("Admin")}</span>
         </a>
 
         <div
@@ -132,7 +135,7 @@ export default function SideBar() {
           aria-expanded="true"
           aria-controls="collapsePages">
           <i className="fas fa-fw fa-atom"></i>
-          <span>Config</span>
+          <span>{t("Config")}</span>
         </a>
 
         <div

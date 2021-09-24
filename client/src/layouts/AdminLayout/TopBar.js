@@ -1,8 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import "../../i18n/i18n";
+import I18n from "./I18n";
 
 export default function TopBar() {
-  const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 {/* <!-- Sidebar Toggle (Topbar) --> */}
@@ -16,6 +18,7 @@ export default function TopBar() {
                 {/* <!-- Topbar Navbar --> */}
                 <ul className="navbar-nav ml-auto">
                   {/* <!-- Nav Item - Search Dropdown (Visible Only XS) --> */}
+                  <I18n/>
                   <li className="nav-item dropdown no-arrow d-sm-none">
                     <a
                       className="nav-link dropdown-toggle"
@@ -84,7 +87,7 @@ export default function TopBar() {
                     >
                       <a className="dropdown-item" href="/">
                         <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        {t,('profile')}
+                        {t("Profile")}
                       </a>
                       
                       <div className="dropdown-divider"></div>
@@ -95,7 +98,7 @@ export default function TopBar() {
                         data-target="#logoutModal"
                       >
                         <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Logout
+                        {t("Logout")}
                       </a>
                     </div>
                   </li>
