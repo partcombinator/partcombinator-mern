@@ -35,8 +35,6 @@ export default function Post() {
     validationSchema: Yup.object(validationSchema()),
     onSubmit: (formData, { resetForm }) => {
       try {
-        
-          console.log("EDIT")
           formData.id = productEdit._id
           editPost(formData);
           resetForm(initialValues()); // Limpiamos el formulario
@@ -59,11 +57,11 @@ export default function Post() {
       </div>
 
       { error && (
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div className="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error</strong> {error}
         <button
           type="button"
-          class="close"
+          className="close"
           data-dismiss="alert"
           aria-label="Close"
           

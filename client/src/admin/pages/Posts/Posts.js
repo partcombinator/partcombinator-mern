@@ -45,7 +45,7 @@ export default function Posts() {
     const loadPost = () => dispatch(givePostAction());
     loadPost();
     setReloadLines(false);
-  }, [reloadLines]);
+  }, [reloadLines, dispatch]);
 
   const redirectEdit = (post) => {
     dispatch(getPostEdit(post));
@@ -60,13 +60,13 @@ export default function Posts() {
 
       {error && (
         <div
-          class="alert alert-danger alert-dismissible fade show"
+          className="alert alert-danger alert-dismissible fade show"
           role="alert"
         >
           <strong>Error</strong> {error}
           <button
             type="button"
-            class="close"
+            className="close"
             data-dismiss="alert"
             aria-label="Close"
           >

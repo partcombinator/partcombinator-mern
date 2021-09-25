@@ -29,7 +29,6 @@ export default function PostNew() {
     validationSchema: Yup.object(validationSchema()),
     onSubmit: (formData, { resetForm }) => {
       try {
-        console.log("CREATE");
         addPost(formData);
         resetForm({ values: "" }); // Limpiamos el formulario
         toast.success("Save");
@@ -51,13 +50,13 @@ export default function PostNew() {
 
       {error && (
         <div
-          class="alert alert-danger alert-dismissible fade show"
+          className="alert alert-danger alert-dismissible fade show"
           role="alert"
         >
           <strong>Error</strong> {error}
           <button
             type="button"
-            class="close"
+            className="close"
             data-dismiss="alert"
             aria-label="Close"
           >

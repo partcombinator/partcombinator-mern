@@ -13,8 +13,8 @@ export default function SideBar() {
       <Link
         className="sidebar-brand d-flex align-items-center justify-content-center"
         to="/admin">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-database"></i>
+        <div className="sidebar-brand-icon rotate-n-15">
+          <i className="fas fa-database"></i>
         </div>
         <div className="sidebar-brand-text mx-3">PartComb</div>
       </Link>

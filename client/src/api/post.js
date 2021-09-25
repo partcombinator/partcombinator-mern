@@ -1,6 +1,6 @@
 import { BASE_PATH_SERVER } from "../utils/constants";
-// import { authFetch } from "../utils/fetch";
-// import { size } from "lodash";
+import { authFetch } from "../utils/fetch";
+import { size } from "lodash";
 
 // READ GET
 export async function getAllPost() {

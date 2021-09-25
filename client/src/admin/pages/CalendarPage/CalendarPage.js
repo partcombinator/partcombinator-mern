@@ -1,6 +1,5 @@
 import React from "react";
 import AdminLayout from "../../../layouts/AdminLayout";
-import { Link } from "react-router-dom";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 

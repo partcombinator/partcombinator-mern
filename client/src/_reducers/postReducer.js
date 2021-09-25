@@ -1,21 +1,4 @@
-import { 
-    ADD_POST,
-    ADD_POST_SUCCESS,
-    ADD_POST_ERROR,
-
-    BEGIN_DOWNLOAD_POST,
-    DOWNLOAD_POST_SUCCESS,
-    DOWNLOAD_POST_ERROR,
-
-    GIVE_POST_DELETE,
-    POST_DELETED_SUCCESS,
-    POST_DELETED_ERROR,
-
-    GIVE_POST_EDIT,
-    POST_EDIT_SUCCESS,
-    POST_EDIT_ERROR
-
- } from '../_types/postTypes';
+import { postConstants } from '../_constants';
 
 
 const initialState = {
@@ -28,31 +11,31 @@ const initialState = {
 
 export default function post(state = initialState, action) {
     switch(action.type) {
-        case BEGIN_DOWNLOAD_POST:
-        case ADD_POST: 
+        case postConstants.BEGIN_DOWNLOAD_POST:
+        case postConstants.ADD_POST: 
             return {
                 ...state,
                 loading: action.payload
             }
 
-        case ADD_POST_SUCCESS: 
+        case postConstants.ADD_POST_SUCCESS: 
             return {
                 ...state,
                 loading: false,
                 posts: [...state.posts, action.payload]
             } 
         
-        case DOWNLOAD_POST_ERROR: 
-        case ADD_POST_ERROR:
-        case POST_DELETED_ERROR:
-        case POST_EDIT_ERROR:    
+        case postConstants.DOWNLOAD_POST_ERROR: 
+        case postConstants.ADD_POST_ERROR:
+        case postConstants.POST_DELETED_ERROR:
+        case postConstants.POST_EDIT_ERROR:    
             return {
                 ...state,
                 loading: false,
                 error: action.payload
             }
 
-         case DOWNLOAD_POST_SUCCESS:
+         case postConstants.DOWNLOAD_POST_SUCCESS:
             return {
                 ...state,
                 loading: false,
@@ -60,13 +43,13 @@ export default function post(state = initialState, action) {
                 posts: action.payload
             }
 
-         case GIVE_POST_DELETE:
+         case postConstants.GIVE_POST_DELETE:
              return {
                  ...state,
                  postdelete: action.payload
              }
          
-        case POST_DELETED_SUCCESS:{
+        case postConstants.POST_DELETED_SUCCESS:{
             return {
                 ...state,
                 posts: state.posts.filter( post => post.id !== state.postdelete),
@@ -74,12 +57,12 @@ export default function post(state = initialState, action) {
             }
         }
 
-        case GIVE_POST_EDIT:
+        case postConstants.GIVE_POST_EDIT:
             return {
                 ...state,
                 postedit : action.payload
             }
-        case POST_EDIT_SUCCESS:
+        case postConstants.POST_EDIT_SUCCESS:
             return {
                 ...state,
                 postedit: null,
