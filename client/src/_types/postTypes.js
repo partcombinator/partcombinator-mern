@@ -1,4 +1,4 @@
-export const postConstants = {
+export const postTypes = {
     
     ADD_POST : 'ADD_POST',
     ADD_POST_SUCCESS : 'ADD_POST_SUCCESS',

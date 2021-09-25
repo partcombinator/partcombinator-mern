@@ -1,10 +1,41 @@
 import React from 'react'
+import * as Yup from "yup";
+import { toast } from "react-toastify";
+import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
 import { LOGIN_GOOGLE, LOGIN_FACEBOOK, RECOVER_PASS_USER, REGISTER_USER } from '../../../utils/constants';
 import {
     Link,
 } from "react-router-dom";
+// Actions Redux
+import { loginUser } from "../../../_actions/userActions";
 
 export default function SignInPage() {
+    const dispatch = useDispatch();
+    const _loginUser = (post) => dispatch(loginUser(post));
+    
+    const formik = useFormik({
+        initialValues: initialValues(),
+        validationSchema: Yup.object(validationSchema()),
+        onSubmit: async (formData, { resetForm }) => {
+            _loginUser(formData);
+        //   setLoading(true);
+        //   const response = await loginApi(formData);
+        //   const { email } = formData
+        //   if (response?.jwt) {
+        //     setLoading(false);
+        //     login(response.jwt)
+        //     toast.success(`Hola!!`);
+        //     // resetForm({ values: '' })  // Limpiamos el formulario
+        //     router.push("/") // Lo redirigimos al login
+        //   } else {
+        //     toast.error("Error de usuario, inténtelo mas tarde");
+        //   }
+        //   setLoading(false);
+        toast.success(`Hola!!`);
+        },
+      });
+
     return (
         <div className="container wallpaper-white">
             <div className="row justify-content-center">
@@ -20,26 +51,38 @@ export default function SignInPage() {
                                         <div className="text-center">
                                             <h1 className="h4 text-gray-900 mb-4">Login</h1>
                                         </div>
-                                        <form className="user">
+                                        <form className="user" onSubmit={formik.handleSubmit}>
                                             <div className="form-group">
-                                                <input type="email" className="form-control form-control-user"
-                                                    id="exampleInputEmail" aria-describedby="emailHelp"
+                                                <input 
+                                                    type="email" 
+                                                    className="form-control form-control-user"
+                                                    id="exampleInputEmail"
+                                                    name="email"
+                                                    onChange={formik.handleChange}
+                                                    value={formik.values.email}
+                                                    aria-describedby="emailHelp"
                                                     placeholder="Enter Email Address..." />
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" className="form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Password" />
+                                                <input 
+                                                    type="password" 
+                                                    className="form-control form-control-user"
+                                                    id="exampleInputPassword"
+                                                    name="password"
+                                                    onChange={formik.handleChange}
+                                                    value={formik.values.password}
+                                                    placeholder="Password" />
                                             </div>
                                             <div className="form-group">
                                                 <div className="custom-control custom-checkbox small">
                                                     <input type="checkbox" className="custom-control-input" id="customCheck" />
-                                                    <label className="custom-control-label">Remember
-                                                        Me</label>
+                                                    {/* <label className="custom-control-label">Remember
+                                                        Me</label> */}
                                                 </div>
                                             </div>
-                                            <a href="index.html" className="btn btn-primary btn-user btn-block">
+                                            <button type="submit" className="btn btn-primary btn-user btn-block">
                                                 Login
-                                            </a>
+                                            </button>
 
                                             {LOGIN_GOOGLE && (
                                                 <>
@@ -77,3 +120,18 @@ export default function SignInPage() {
         </div>
     )
 }
+
+
+function initialValues() {
+    return {
+      email: "",
+      password: "",
+    };
+  }
+  
+  function validationSchema() {
+    return {
+      email: Yup.string().email(true).required(true),
+      password: Yup.string().required(true),
+    };
+  }

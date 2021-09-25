@@ -3,7 +3,7 @@ import { authFetch } from "../utils/fetch";
 import { size } from "lodash";
 
 
-export async function login(formData) {
+export async function loginApi(formData) {
     try {
       const url = `${BASE_PATH_SERVER}/auth/local`;
       const params = {

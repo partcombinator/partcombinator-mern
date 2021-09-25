@@ -1,4 +1,4 @@
-import { postConstants } from '../_constants';
+import { postTypes} from '../_types';
 
 
  import { createPost, getAllPost, deletePost, editPost } from '../api/post'
@@ -17,17 +17,17 @@ export function createNewPostAction(post){
 }
 
 const _addPost = () => ({
-    type: postConstants.ADD_POST,
+    type: postTypes.ADD_POST,
     payload: true
 })
 
 const _addPostSuccess = post => ({
-    type: postConstants.ADD_POST_SUCCESS,
+    type: postTypes.ADD_POST_SUCCESS,
     payload: post 
 })
 
 const _addPostError = stateError => ({
-    type: postConstants.ADD_POST_ERROR,
+    type: postTypes.ADD_POST_ERROR,
     payload: stateError
 })
 
@@ -48,18 +48,18 @@ export function givePostAction() {
 }
 
 const _downloadPost = () => ({
-    type: postConstants.BEGIN_DOWNLOAD_POST,
+    type: postTypes.BEGIN_DOWNLOAD_POST,
     payload: true
 })
 
 const _getAllPostSuccess = posts => (
     {
-    type: postConstants.DOWNLOAD_POST_SUCCESS,
+    type: postTypes.DOWNLOAD_POST_SUCCESS,
     payload: posts
 })
 
 const _getPostError = () => ({
-    type: postConstants.DOWNLOAD_POST_ERROR,
+    type: postTypes.DOWNLOAD_POST_ERROR,
     payload: true
 })
 
@@ -79,16 +79,16 @@ export function detelePOstAction(id) {
 }
 
 const _givePostDelete = id => ({
-    type: postConstants.GIVE_POST_DELETE,
+    type: postTypes.GIVE_POST_DELETE,
     payload: id
 })
 
 const _deletePostSuccess = () => ({
-    type: postConstants.POST_DELETED_SUCCESS,
+    type: postTypes.POST_DELETED_SUCCESS,
 })
 
 const _deletePostError = () => ({
-    type: postConstants.POST_DELETED_ERROR,
+    type: postTypes.POST_DELETED_ERROR,
     payload: true
 })
 
@@ -102,7 +102,7 @@ export function getPostEdit(post) {
 }
 
 const _getPostEditAction = post => ({
-    type: postConstants.GIVE_POST_EDIT,
+    type: postTypes.GIVE_POST_EDIT,
     payload: post
 })
 
@@ -121,16 +121,16 @@ export function editPostAction( post ) {
 }
 
 const _editPost = () => ({
-    type: postConstants.BEGIN_EDIT_POST
+    type: postTypes.BEGIN_EDIT_POST
 })
 
 const _editPostSuccess = post => ({
-    type: postConstants.POST_EDIT_SUCCESS,
+    type: postTypes.POST_EDIT_SUCCESS,
     payload: post
 })
 
 const _editPostError = () => ({
-    type: postConstants.POST_EDIT_ERROR,
+    type: postTypes.POST_EDIT_ERROR,
     payload: true
 })
 
