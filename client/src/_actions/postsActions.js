@@ -107,8 +107,6 @@ const _getPostEditAction = post => ({
 })
 
 export function editPostAction( post ) {
-    console.log("editPostAction:", post)
-    console.log("id:", post.id)
     return async (dispatch) => {
         dispatch( _editPost( post)  )
         try {

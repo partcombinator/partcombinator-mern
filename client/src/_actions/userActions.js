@@ -1,45 +1,48 @@
    
 import { userTypes } from '../_types';
-import { history } from '../_helpers';
-import { loginApi } from '../api/user'
+import { loginApi } from '../api/user';
+import { setToken, getToken, removeToken } from '../api/token';
 
 export function loginUser(formData){
-    const token = ''
-    console.log("formData::", formData)
-    return (dispatch) => {
-        // dispatch( _addPost(post) );
+    return async (dispatch) => {
+        dispatch( _request() );
         try {
-            token = loginApi(formData)
-            console.log("token: ", token)
-            // dispatch( _addPostSuccess(post) );
+            removeToken();
+            const response = await loginApi(formData)
+            if (response.token) {
+                setToken(response.token)
+                dispatch( _success(response.token) );
+            } else {
+                throw new Error(response.msg);
+            }
+            
         } catch (error) {
-            // dispatch( _addPostError(true) );
+            removeToken();
+            dispatch( _error(error) );
+
         }
     }
+
+    
 }
 
+const _request = () => ({
+    type: userTypes.USERS_LOGIN_REQUEST,
+    payload: true
+})
 
-// export const userActions = {
-//     login
-// };
+const _success = token => ({
+    type: userTypes.USERS_LOGIN_SUCCESS,
+    payload: token 
+})
 
-// function login(formData) {
-//     return dispatch => {
-//         dispatch(request({ username }));
+const _error = error => ({
+    type: userTypes.USERS_LOGIN_ERROR,
+    payload: error 
+})
 
-//         login(formData)
-//             .then(
-//                 user => { 
-//                     dispatch(success(user));
-//                     history.push('/');
-//                 },
-//                 error => {
-//                     dispatch(failure(error.toString()));
-//                     dispatch(alertActions.error(error.toString()));
-//                 }
-//             );
-//     };
-//     function request(user) { return { type: userTypes.LOGIN_REQUEST, user } }
-//     function success(user) { return { type: userTypes.LOGIN_SUCCESS, user } }
-//     function failure(error) { return { type: userTypes.LOGIN_FAILURE, error } }
-// }
+
+export function logoutUser(){
+    removeToken();
+}
+

@@ -34,7 +34,7 @@ export async function createPost(formData) {
           },
           body: JSON.stringify(formData),
         };
-        const response = await fetch(url, params);
+        const response = await authFetch(url, params);
         const result = await response.json();
         return result;
     } catch (error) {
@@ -54,7 +54,7 @@ export async function deletePost(id) {
         },
         
       };
-      const response = await fetch(url, params);
+      const response = await authFetch(url, params);
       const result = await response.json();
       return result;
   } catch (error) {
@@ -74,7 +74,7 @@ export async function editPost(id, formData) {
         },
         body: JSON.stringify(formData),
       };
-      const response = await fetch(url, params);
+      const response = await authFetch(url, params);
       const result = await response.json();
       return result;
     } catch (error) {

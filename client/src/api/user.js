@@ -5,7 +5,7 @@ import { size } from "lodash";
 
 export async function loginApi(formData) {
     try {
-      const url = `${BASE_PATH_SERVER}/auth/local`;
+      const url = `${BASE_PATH_SERVER}/api/user/login`;
       const params = {
         method: "POST",
         headers: {

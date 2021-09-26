@@ -1,4 +1,4 @@
-import { postConstants } from '../_constants';
+import { postTypes } from '../_types';
 
 
 const initialState = {
@@ -11,31 +11,31 @@ const initialState = {
 
 export default function post(state = initialState, action) {
     switch(action.type) {
-        case postConstants.BEGIN_DOWNLOAD_POST:
-        case postConstants.ADD_POST: 
+        case postTypes.BEGIN_DOWNLOAD_POST:
+        case postTypes.ADD_POST: 
             return {
                 ...state,
                 loading: action.payload
             }
 
-        case postConstants.ADD_POST_SUCCESS: 
+        case postTypes.ADD_POST_SUCCESS: 
             return {
                 ...state,
                 loading: false,
                 posts: [...state.posts, action.payload]
             } 
         
-        case postConstants.DOWNLOAD_POST_ERROR: 
-        case postConstants.ADD_POST_ERROR:
-        case postConstants.POST_DELETED_ERROR:
-        case postConstants.POST_EDIT_ERROR:    
+        case postTypes.DOWNLOAD_POST_ERROR: 
+        case postTypes.ADD_POST_ERROR:
+        case postTypes.POST_DELETED_ERROR:
+        case postTypes.POST_EDIT_ERROR:    
             return {
                 ...state,
                 loading: false,
                 error: action.payload
             }
 
-         case postConstants.DOWNLOAD_POST_SUCCESS:
+         case postTypes.DOWNLOAD_POST_SUCCESS:
             return {
                 ...state,
                 loading: false,
@@ -43,13 +43,13 @@ export default function post(state = initialState, action) {
                 posts: action.payload
             }
 
-         case postConstants.GIVE_POST_DELETE:
+         case postTypes.GIVE_POST_DELETE:
              return {
                  ...state,
                  postdelete: action.payload
              }
          
-        case postConstants.POST_DELETED_SUCCESS:{
+        case postTypes.POST_DELETED_SUCCESS:{
             return {
                 ...state,
                 posts: state.posts.filter( post => post.id !== state.postdelete),
@@ -57,12 +57,12 @@ export default function post(state = initialState, action) {
             }
         }
 
-        case postConstants.GIVE_POST_EDIT:
+        case postTypes.GIVE_POST_EDIT:
             return {
                 ...state,
                 postedit : action.payload
             }
-        case postConstants.POST_EDIT_SUCCESS:
+        case postTypes.POST_EDIT_SUCCESS:
             return {
                 ...state,
                 postedit: null,
