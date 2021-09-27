@@ -14,12 +14,17 @@ import { Link } from "react-router-dom";
 import { loginUser } from "../../../_actions/userActions";
 import { useHistory } from "react-router-dom";
 
+
 export default function SignInPage() {
   const dispatch = useDispatch();
   const _loginUser = (data) => dispatch(loginUser(data));
   const _error = useSelector((state) => state.users.error);
   const loading = useSelector((state) => state.users.loading);
+  const token = useSelector((state) => state.users.token);
   const history = useHistory();
+  
+  token && history.push('/admin')
+
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -58,11 +63,7 @@ export default function SignInPage() {
             <div className="card-body p-0">
               <div className="row">
                 <div className="col-lg-6 d-none d-lg-block">
-                  <img
-                    src="/admin/img/your-logo.png"
-                    style={{ width: "100%", height: "100" }}
-                    alt="logo"
-                  ></img>
+                <img src="/react-logo.png" style={{ "width": "100%", "height": "100", "padding" : "20px" }} alt="logo"></img>
                 </div>
                 <div className="col-lg-6">
                   <div className="p-5">

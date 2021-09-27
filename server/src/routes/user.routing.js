@@ -24,7 +24,7 @@ router.post('/login',
 
 // get authenticated user
 // api/user
-router.get('/', 
+router.get('/:id', 
     auth,
     userController.AuthenticatedUser
 
@@ -35,5 +35,6 @@ router.get('/',
 router.get('/activate/:token', 
     userController.ActivateUser
 );
+
 
 module.exports = router;

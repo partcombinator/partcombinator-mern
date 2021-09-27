@@ -4,16 +4,18 @@ export async function authFetch(url, params, logout) {
   const token = getToken();
 
   if (!token) {
+    // Usuario no logeador
     logout();
   } else {
     if (hasExpiredToken(token)) {
+      // Token caducado
       logout();
     } else {
       const paramsTemp = {
         ...params,
         headers: {
           ...params?.headers,
-          Authorization: `Bearer ${token}`,
+          'x-auth-token': token,
         },
       };
       try {

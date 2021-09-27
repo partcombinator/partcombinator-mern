@@ -3,15 +3,14 @@ import SideBar from "./SideBar";
 import TopBar from "./TopBar";
 import Footer from "./Footer";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 
 export default function AdminLayout(props) {
   const history = useHistory();
-  const token = useSelector((state) => state.users.token);
+  // const token = useSelector((state) => state.users.token);
   const { children } = props;
 
-  token || history.push('/signin')
+  // token || history.push('/signin')
 
   return (
     <div id="wrapper">

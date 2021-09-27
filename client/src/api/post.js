@@ -47,6 +47,7 @@ export async function createPost(formData) {
 export async function deletePost(id) {
   try {
       const url = `${BASE_PATH_SERVER}/api/post/${id}`;
+      console.log(url)
       const params = {
         method: "DELETE",
         headers: {
@@ -55,6 +56,7 @@ export async function deletePost(id) {
         
       };
       const response = await authFetch(url, params);
+      console.log(response);
       const result = await response.json();
       return result;
   } catch (error) {

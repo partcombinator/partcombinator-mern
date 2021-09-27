@@ -7,6 +7,9 @@ const UserSchema = mongoose.Schema({
         required: [true, "Please enter your name!"],
         trim: true
     },
+    lastname: {
+        type: String,
+    },
     username: {
         type: String,
     },
@@ -28,6 +31,10 @@ const UserSchema = mongoose.Schema({
         type: Boolean,
         default: false,
       },
+    active: {
+        type: Boolean,
+        default: true,
+      },  
     creatAt: {
         type: Date,
         default: Date.now()

@@ -28,3 +28,10 @@ cd client
 yarn
 yarn start
 ```
+
+
+# Todo
+```
+1- Show Error in Login and Register from API
+2- Fix the Error with css and js in two layout
+```

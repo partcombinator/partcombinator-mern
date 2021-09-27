@@ -6,8 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 const RoutePrivate = ({ component: Component, ...props }) => {
   // Todo: Private URL
-  // const token = useSelector((state) => state.users.token);
-  const autenticado = true;
+  const token = useSelector((state) => state.users.token);
+  let autenticado = false;
+  if (token) 
+      {
+          autenticado = true;
+      } 
   return (
     <Route
       {...props}

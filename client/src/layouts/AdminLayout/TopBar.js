@@ -1,21 +1,37 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useTranslation } from "react-i18next";
 import "../../i18n/i18n";
 import I18n from "./I18n";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logoutUser } from "../../_actions/userActions";
+import { logoutUser, UserData } from "../../_actions/userActions";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import jwtDecode from "jwt-decode";
 
 export default function TopBar() {
     const dispatch = useDispatch();
     const _logoutUser = () => dispatch(logoutUser());
-
+    const user = useSelector((state) => state.users.user);
     const { t } = useTranslation();
     const history = useHistory();
-    const closeSession = () => {
+    const closeSession =  () => {
       _logoutUser();
       history.push('/signin');
     }
+    const token = useSelector((state) => state.users.token);
+    const tokenDecode  = jwtDecode(token);
+    const id = tokenDecode.id
+    
+    useEffect(() => {
+      if (id) {
+        dispatch(UserData(id));
+      }
+    }, [])
+
+  
+
+    
 
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -84,7 +100,7 @@ export default function TopBar() {
                       aria-expanded="false"
                     >
                       <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                        Marlon Falcón
+                        { user && ( user.name +" "+ user.lastname )  }
                       </span>
                       <img
                         className="img-profile rounded-circle"
@@ -97,10 +113,10 @@ export default function TopBar() {
                       className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                       aria-labelledby="userDropdown"
                     >
-                      <a className="dropdown-item" href="/">
+                      <Link className="dropdown-item" to="/admin/profile">
                         <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         {t("Profile")}
-                      </a>
+                      </Link>
                       
                       <div className="dropdown-divider"></div>
                       <a

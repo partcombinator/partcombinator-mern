@@ -7,12 +7,9 @@ const crypto = import("crypto");
 
 
 function createToken(user, SECRET_KEY, expiresIn){
-    const {id, name, email, username } = user;
+    const {id } = user;
     const payload = {
         id,
-        name,
-        email,
-        username
     };
     return jwt.sign(payload, SECRET_KEY, { expiresIn })
 }
@@ -20,6 +17,7 @@ function createToken(user, SECRET_KEY, expiresIn){
 exports.singUp = async (req, res) => {
 
     const errores = validationResult(req)
+    console.log("errores", errores)
     if (!errores.isEmpty()) {
         return res.status(400).json({ errores: errores.array() })
     }
@@ -36,7 +34,7 @@ exports.singUp = async (req, res) => {
 
             // create the user
             user = new User(req.body);
-
+            console.log("user:", user)
             // hashear the password
             const salt = await bcryptjs.genSalt(10);
             user.password = await bcryptjs.hash(password, salt)
@@ -90,10 +88,10 @@ exports.singUp = async (req, res) => {
 // usuarioAutenticado
 exports.AuthenticatedUser = async(req, res) => {
     try {
-        const user = await User.findById(req.user.id).select('-password');
+        
+        const user = await User.findOne({ _id: req.params.id });
         res.status(200).json({user});
     } catch (error) {
-        console.log(error);
         res.status(500).json({ msg: 'Error' })
     }
 }

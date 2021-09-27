@@ -17,7 +17,7 @@ router.get('/',
 // post
 // api/post
 router.post('/',
-    // auth,
+    auth,
     [
         check('title', 'The title is required').not().isEmpty(),
         check('text', 'The text is required').not().isEmpty(),
@@ -30,7 +30,7 @@ router.post('/',
 // delete
 // api/post
 router.delete('/:id',
-    // auth,
+    auth,
     postController.delete
 );
 
@@ -38,7 +38,7 @@ router.delete('/:id',
 // put
 // api/post
 router.put('/:id',
-    // auth,
+    auth,
     postController.edit
 );
 
