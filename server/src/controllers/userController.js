@@ -89,7 +89,9 @@ exports.singUp = async (req, res) => {
 exports.AuthenticatedUser = async(req, res) => {
     try {
         
-        const user = await User.findOne({ _id: req.params.id });
+        let user = await User.findOne({ _id: req.params.id });
+        delete user.passsword
+        console.log(user)
         res.status(200).json({user});
     } catch (error) {
         res.status(500).json({ msg: 'Error' })
